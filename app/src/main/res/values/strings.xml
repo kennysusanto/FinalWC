@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FinalWC</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_settings">Settings</string>
+    <string name="train_id">Train ID</string>
+    <string name="train_curr_loc">Train Current Location</string>
+    <string name="prev_station_id">Previous Station ID</string>
+    <string name="next_station_id">Next Station ID</string>
+    <string name="arrival_eta">Arrival ETA</string>
+    <string name="save">Save</string>
+    <string name="show">Show</string>
+    <string name="empty"></string>
+    <string name="clear_table">Clear Table</string>
+</resources>
