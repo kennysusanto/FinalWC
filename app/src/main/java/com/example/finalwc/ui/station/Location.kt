@@ -1,4 +1,4 @@
-package com.example.finalwc.ui.home
+package com.example.finalwc.ui.station
 
 class Location{
     var x: Int = 0

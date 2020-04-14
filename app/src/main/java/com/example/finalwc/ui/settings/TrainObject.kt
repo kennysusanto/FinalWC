@@ -1,7 +1,5 @@
 package com.example.finalwc.ui.settings
 
-import com.example.finalwc.ui.home.Location
-
 class TrainObject{
     var train_id: String = ""
     var train_curr_loc: String = ""

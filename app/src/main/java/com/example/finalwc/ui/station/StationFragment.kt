@@ -1,21 +1,21 @@
-package com.example.finalwc.ui.home
+package com.example.finalwc.ui.station
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.support.v4.app.Fragment
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.finalwc.R
 
-class HomeFragment : Fragment() {
+class StationFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var homeViewModel: StationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,8 +23,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+                ViewModelProviders.of(this).get(StationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_station, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(this, Observer {
             textView.text = it
@@ -38,15 +38,14 @@ class HomeFragment : Fragment() {
 
 
         trains.add(
-            TrainData(
-                "KRL00" + (0..100).random(),
-                "Default Location",
-                randStat(),
-                randStat(),
-                (0..30).random()
-            )
+                TrainData(
+                        "KRL00" + "5",
+                        "Default Location",
+                        "Station C",
+                        "Station B",
+                        17
+                )
         )
-
 
 
         val adapter = CustomAdapter(trains)
@@ -55,20 +54,8 @@ class HomeFragment : Fragment() {
 
         return root
     }
-    fun randStat():String{
-        var result = ""
 
-        var seed = (0..3).random()
-
-        if(seed == 0) result = "Station A"
-        else if(seed == 1) result = "Station B"
-        else result = "Station C"
-
-        return result
+    companion object {
+        fun newInstance(): StationFragment = StationFragment()
     }
-
-
-
-
-
 }

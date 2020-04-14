@@ -5,11 +5,10 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import com.example.finalwc.ui.home.Location
 
 class DatabaseHandler(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION){
     override fun onCreate(db: SQLiteDatabase){
-        val CREATE_TABLE = "CREATE TABLE $TABLE_NAME" + "($TRAIN_ID INTEGER PRIMARY KEY, $TRAIN_CURR_LOC TEXT, $PREV_STATION_ID TEXT, $NEXT_STATION_ID TEXT, $ARRIVAL_ETA INTEGER)"
+        val CREATE_TABLE = "CREATE TABLE $TABLE_NAME" + "($TRAIN_ID TEXT PRIMARY KEY, $TRAIN_CURR_LOC TEXT, $PREV_STATION_ID TEXT, $NEXT_STATION_ID TEXT, $ARRIVAL_ETA INTEGER)"
         db.execSQL(CREATE_TABLE)
     }
 

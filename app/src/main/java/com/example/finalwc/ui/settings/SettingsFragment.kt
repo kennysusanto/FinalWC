@@ -1,15 +1,14 @@
 package com.example.finalwc.ui.settings
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.support.v4.app.Fragment
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.example.finalwc.R
 import kotlinx.android.synthetic.main.fragment_settings.*
@@ -75,6 +74,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 textView_allTrain.setText(train)
             }
             R.id.button_clear_table ->{
+                //context?.deleteDatabase("FinalWC_DB") //destroy database
                 dbHandler!!.deleteFromTable()
                 val toast = Toast.makeText(activity?.applicationContext, "Table Cleared!", Toast.LENGTH_LONG).show()
                 }
@@ -92,5 +92,9 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             val toast = Toast.makeText(activity?.applicationContext, "Fill all details", Toast.LENGTH_LONG).show()
         }
         return validate
+    }
+
+    companion object {
+        fun newInstance(): SettingsFragment = SettingsFragment()
     }
 }

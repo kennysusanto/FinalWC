@@ -1,4 +1,4 @@
-package com.example.finalwc.ui.home
+package com.example.finalwc.ui.station
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

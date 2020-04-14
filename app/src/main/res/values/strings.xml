@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">FinalWC</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="app_name">FinalWC_APP</string>
+    <string name="title_station">Station</string>
+    <string name="title_train">Train</string>
     <string name="title_settings">Settings</string>
     <string name="train_id">Train ID</string>
     <string name="train_curr_loc">Train Current Location</string>
